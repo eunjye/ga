@@ -72,6 +72,7 @@ select, .btn_select:focus {border-color:#008bec;}
 .grid2 li {float:left; position:relative;}
 .grid2 li {margin-left:18px;}
 .grid2 li:first-child {margin-left:0;}
+.dv.w5{width:4.5%;}
 .dv.w10 {width:9%;}
 .dv.w50 {width:50%;}
 .radio .dv.tal {width:40%;}
@@ -248,10 +249,16 @@ h2.tit {font-size:16px; font-weight:700;}
 .form_item .chk_timer{display:block;text-align:right;position:absolute;right:0;top:50%;margin-top:-11px;font-size:1.1rem;color:#535353;padding-left:13px;background:url(../images/common/chk_timer.png) no-repeat left center;background-size:10px auto;}
 .form_item .btn_right{position:absolute;top:0;right:0;}
 .section>.form_item:first-child{margin-top:0;}
-.form_item .input.phone_form .dv:first-child{width:28%;}
+.form_item .input.phone_form .dv:first-child{width:120px;}
+.form_item .input.phone_form .dv:last-child{width:calc(95% - 120px);}
 .form_item .input.certification .dv:last-child {width:120px; padding-left:10px; }
 .form_item .dv .timer {position:absolute; top:50%; right:13px; color:#008bec; font-size:13px; transform:translateY(-50%);}
+.form_item .gender { letter-spacing:-1px; }
+.form_item .gender:after { display:block; clear:both; content:""; }
+.form_item .gender .i_txt { float:left; display:block; width:34px; text-align:center; }
+.form_item .gender .dots { float:left; display:block; width:calc(100% - 34px); text-align:justify; height:40px; line-height:40px; letter-spacing:1px; padding:0 0 0 8px; }
 .agree_form {margin-top:30px;}
+.agree_form:first-child {margin-top:0;}
 .agree_form input {position: absolute; left: 0; top: 0; width: 26px; height: 26px; opacity: 0; margin: 0; z-index: 2; clip: auto;}
 .agree_form label {display:block; position:relative; width:80%; margin-bottom:0; padding-left:37px; font-size:13px; color:#111315; font-weight:400; cursor:pointer; vertical-align:middle;}
 .agree_form label:before {content:'';  position:absolute; top:0; left:0; width: 26px; height: 26px; background:url(../images/bg_agree_chk_off.png) no-repeat 0 0; background-size:26px auto;}

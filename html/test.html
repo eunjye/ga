@@ -24,57 +24,6 @@
 			</div>
 			<div class="dialog_content">
 				<div class="section">
-					<div class="form_item">
-						<label for="inp_name" class="lb">이름</label>
-						<div class="input">
-							<span class="dv"><input id="inp_name" class="i_txt" type="text" placeholder="이름을 입력하세요"></span>
-						</div>
-          </div>
-          <div class="form_item">
-						<label for="birth_date" class="lb">생년월일 및 성별</label>
-						<div class="input">
-              <div class="row">
-                <span class="dv w50"><input type="text" id="birth_date"class="i_txt" type="text" placeholder="예) 19780420"></span>
-                <span class="dv w10"></span>
-                <div class="dv tal">
-                  <ul class="grid2">
-                    <li>
-                      <span class="radio">
-                        <input id="rdo1" type="radio" name="rdo">
-                        <label for="rdo1">남자</label>
-                      </span>
-                    </li>
-                    <li>
-                      <span class="radio">
-                        <input id="rdo2" type="radio" name="rdo">
-                        <label for="rdo2">여자</label>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-						</div>
-          </div>
-          <div class="form_item">
-						<label for="phone_number1_1" class="lb">휴대폰번호</label>
-						<div class="input phone_form">
-              <span class="dv">
-                <input id="phone_number1_2" class="i_txt" type="text" placeholder="'-'를 제외한 번호입력">
-              </span>
-						</div>
-          </div>
-          <div class="form_item">
-						<label for="phoneCheck1" class="lb">인증번호</label>
-						<div class="input certification">
-              <span class="dv">
-                <input id="phoneCheck1" class="i_txt" type="tel">
-                <span class="timer">02:49</span>
-              </span>
-              <span class="dv">
-                <a href="#" class="btn t1" role="button">인증번호 발송</a>
-              </span>
-						</div>
-          </div>
           <div class="agree_form">
             <div class="check_all">
               <div class="check_top">
@@ -101,6 +50,54 @@
                 </div>
               </div>
             </div>
+          </div>
+					<div class="form_item">
+						<label for="inp_name" class="lb">이름</label>
+						<div class="input">
+							<span class="dv"><input id="inp_name" class="i_txt" type="text" placeholder="이름을 입력하세요"></span>
+						</div>
+          </div>
+          <div class="form_item">
+						<label for="birth_date" class="lb">생년월일 및 성별</label>
+						<div class="input">
+              <div class="row">
+                <span class="dv w50"><input type="text" id="birth_date"class="i_txt" type="text" placeholder="예) 19780420"></span>
+                <span class="dv w5 tac">-</span>
+                <div class="dv gender">
+                  <input type="tel" title="주민번호뒷자리 첫째(성별)" name="gender" class="i_txt" maxlength="1">
+                  <span class="dots">******</span>
+                </div>
+              </div>
+						</div>
+          </div>
+          <div class="form_item">
+						<label for="phone_number1_1" class="lb">휴대폰번호</label>
+						<div class="input phone_form">
+              <span class="dv">
+                <select class="btn_select">
+                  <option hidden>통신사</option>
+                  <option value="">LG U+</option>
+                  <option value="">SKT</option>
+                  <option value="">KT</option>
+                </select>
+              </span>
+              <span class="dv w5 tac"></span>
+              <span class="dv">
+                <input id="phone_number1_2" class="i_txt" type="text" placeholder="'-'를 제외한 번호입력">
+              </span>
+						</div>
+          </div>
+          <div class="form_item">
+						<label for="phoneCheck1" class="lb">인증번호</label>
+						<div class="input certification">
+              <span class="dv">
+                <input id="phoneCheck1" class="i_txt" type="tel">
+                <span class="timer">02:49</span>
+              </span>
+              <span class="dv">
+                <a href="#" class="btn t1" role="button">인증번호 발송</a>
+              </span>
+						</div>
           </div>
           <div class="btn_wrap bottom">
             <a class="btn" href="index.html">확인</a>
