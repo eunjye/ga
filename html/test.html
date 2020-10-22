@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="../dummy/css/common.css">	
+  <link rel="stylesheet" type="text/css" href="../dummy/css/popup.css">	
+  <script src="../dummy/js/jquery.min.js"></script>
+  <script src="../dummy/js/jquery-ui-1.12.1.min.js"></script>
+  <script src="../dummy/js/ui_common.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <ul>
+      <li><a href="#" class="btn bs1 bc2" onclick="Dialog.open('#fullDialog')">풀팝업</a></li>
+    </ul>
+  </div>
+  <div id="fullDialog" class="dialog full" role="dialog"  aria-hidden="">
+		<div class="dialog_wrap">
+			<div class="dialog_header">
+        <p class="s_txt">청약확인서를 확인할</p>
+				<p class="h_tit">본인인증을 해주세요</p>
+			</div>
+			<div class="dialog_content">
+				<div class="section">
+					<div class="form_item">
+						<label for="inp_name" class="lb">이름</label>
+						<div class="input">
+							<span class="dv"><input id="inp_name" class="i_txt" type="text" placeholder="이름을 입력하세요"></span>
+						</div>
+          </div>
+          <div class="form_item">
+						<label for="birth_date" class="lb">생년월일 및 성별</label>
+						<div class="input">
+              <div class="row">
+                <span class="dv w50"><input type="text" id="birth_date"class="i_txt" type="text" placeholder="예) 19780420"></span>
+                <span class="dv w10"></span>
+                <div class="dv tal">
+                  <ul class="grid2">
+                    <li>
+                      <span class="radio">
+                        <input id="rdo1" type="radio" name="rdo">
+                        <label for="rdo1">남자</label>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="radio">
+                        <input id="rdo2" type="radio" name="rdo">
+                        <label for="rdo2">여자</label>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+						</div>
+          </div>
+          <div class="form_item">
+						<label for="phone_number1_1" class="lb">휴대폰번호</label>
+						<div class="input phone_form">
+              <span class="dv">
+                <input id="phone_number1_2" class="i_txt" type="text" placeholder="'-'를 제외한 번호입력">
+              </span>
+						</div>
+          </div>
+          <div class="form_item">
+						<label for="phoneCheck1" class="lb">인증번호</label>
+						<div class="input certification">
+              <span class="dv">
+                <input id="phoneCheck1" class="i_txt" type="tel">
+                <span class="timer">02:49</span>
+              </span>
+              <span class="dv">
+                <a href="#" class="btn t1" role="button">인증번호 발송</a>
+              </span>
+						</div>
+          </div>
+          <div class="agree_form">
+            <div class="check_all">
+              <div class="check_top">
+                <div>
+                  <input type="checkbox" id="check_all">
+                  <label for="check_all">전체 동의</label>
+                </div>
+              </div>
+              <div class="check_bottom">
+                <div>
+                  <input type="checkbox" id="check_1" class="chk">
+                  <label for="check_1">휴대폰 본인인증 이용 동의</label>
+                  <button type="button"><span class="offscreen">휴대폰 본인인증 이용 동의 이동</span></button>
+                </div>
+                <div>
+                  <input type="checkbox" id="check_2" class="chk" >
+                  <label for="check_2">전자금융거래 이용약관 동의</label>
+                  <button type="button"><span class="offscreen">전자금융거래 이용약관 동의 이동</span></button>
+                </div>
+                <div>
+                  <input type="checkbox" id="check_3" class="chk" >
+                  <label for="check_3">전자금융 서비스 약관 동의</label>
+                  <button type="button"><span class="offscreen">전자금융 서비스 약관 동의 이동</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn_wrap bottom">
+            <a class="btn" href="index.html">확인</a>
+          </div>
+				</div>
+			</div>
+		</div>
+  </div>
+</body>
+</html>
