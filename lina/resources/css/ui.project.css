@@ -83,7 +83,7 @@ html[intro="true"] .btn-talk.off{z-index:101}
 */
 .btn-talk::after{content:""; display:block; width:90px; height:26px; background:url(../img/common/ico-talk-on-wide.png) no-repeat 50% 50% / 90px auto; flex:0 90px;}
 .btn-talk.off{position:fixed; top:16px; right:18px; width:36px; height:36px; border-radius:50%; z-index:98; background:#fff; box-shadow:5px 5px 10px rgba(0,0,0,0.1); justify-content:center; align-items:center; display:flex; }
-.btn-talk.off::after{content:""; display:block; width:19px; height:19px; background:url(../img/common/ico-talk-off.png) no-repeat 50% 50% / 19px auto; flex:0 0 19px; background-color:red;}
+.btn-talk.off::after{content:""; display:block; width:19px; height:19px; background:url(../img/common/ico-talk-off.png) no-repeat 50% 50% / 19px auto; flex:0 0 19px;}
 
 .btn-arrow-modal .ico{display:block; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.3); position:absolute; top:50%; margin-top:-20px; right:0; }
 .btn-arrow-modal .ico::after{content:""; display:block; width:12px; height:7px; background:url(../img/common/ico-arrow.svg) no-repeat 50% 50% / cover; position:absolute; top:50%; left:50%; margin:-4px 0 0 -6px}
