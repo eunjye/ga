@@ -40,6 +40,15 @@ html.iPhoneX.isApp .dialog:not(.modal) .dialog_content .in_touch_scl{height:calc
 .dialog.full .dialog_wrap .dialog_content .section .guide_txt .txt {color:#666; font-size:14px;}
 .dialog.full .dialog_wrap .dialog_content .section .guide_txt .txt1 {margin-top:15px; font-size:16px; font-weight:700;}
 .dialog.full .dialog_wrap .dialog_content .section .guide_txt .txt2 {font-size:14px;}
+
+/* full type2 */
+.dialog.full.type2 .dialog_header { position:relative; display:table; width:100%; padding:0 40px 0 18px; height:50px; line-height:1.4em; background:#008bec; }
+.dialog.full.type2 .dialog_header .h_tit { display:table-cell; vertical-align:middle; color:#fff; font-size:18px !important; font-weight:bold; line-height:inherit !important; }
+.dialog.full.type2 .dialog_header .dialog_close { background-image:url('../images/ico_close_btn2.png')}
+.dialog.full.type2 .section:after { display:none !important; }
+.dialog.full.type2 .dialog_content { height:calc(100% - 50px); }
+.dialog.full.type2 .dialog_content .section.btn_y {padding-bottom:75px;}
+
 .dialog.bottom{padding-top:50px;}
 .dialog.bottom .dialog_wrap{position:fixed;left:0;bottom:0;border-radius:20px 20px 0 0;max-height:100%;}
 .dialog.bottom .dialog_header{padding:40px 20px 30px;}
