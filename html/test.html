@@ -17,9 +17,49 @@
             <li><a href="#" class="btn bs1 bc2" onclick="Dialog.open('#fullDialog')">풀팝업</a></li>
         </ul>
         <script type="text/javascript">
+
             $(document).ready(function(){
                 Dialog.open('#fullDialog');
+
             })
+
+            // [20201109] 전체체크 함수 추가
+            var allCheck = {
+                /**
+                * @param {string} : 토글하고자하는 checkbox 그룹의 name
+                * */
+                toggleAll: function(_name){
+                    var $ts = $(event.target)
+                        , $chk = $('[name="'+_name+'"]');
+
+                    $chk.prop('checked', $ts.prop('checked'));
+                },
+                /**
+                * @param {string} : 토글하고자하는 checkbox 그룹의 name
+                * @param {string} : 전체 동의 checkbox의 id
+                * */
+                isAll: function(_name, _id){
+                    var $ts = $(event.target)
+                        , $chkAll = $('#'+_id)
+                        , $chk = $('[name="'+_name+'"]')
+                        
+                        , i = 0
+                        , flag = false;
+                        
+                    while (i < $chk.length) {
+                        flag = $chk.eq(i).prop('checked');
+                        if (!flag){
+                            break;
+                        } else i++;
+                    }
+                    if (flag){ // 전체 체크일 시
+                        $chkAll.prop('checked', true);
+                    } else {
+                        $chkAll.prop('checked', false);
+                    }
+                }
+            }
+            
         </script>
     </div>
     <!-- [Popup] 본인인증 -->
@@ -35,29 +75,29 @@
                         <div class="check_all">
                             <div class="check_top">
                                 <div>
-                                    <input type="checkbox" id="check_all">
+                                    <input type="checkbox" id="check_all" name="chkAgreeGroup1_all" onchange="allCheck.toggleAll('chkAgreeGroup1');"> <!-- [20201109] 전체체크 함수 추가 -->
                                     <label for="check_all">전체 동의</label>
                                 </div>
                             </div>
                             <div class="check_bottom">
                                 <!-- [20201109] 청약확인서 동의 약관 추가 -->
                                 <div>
-                                    <input type="checkbox" id="check_4" class="chk">
+                                    <input type="checkbox" id="check_4" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
                                     <label for="check_4">청약확인서 열람 및 인증 동의</label>
                                     <button type="button" onclick="Dialog.open('#termsSubscription')"><span class="offscreen">청약확인서 열람 및 인증 동의 이동</span></button>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="check_1" class="chk">
+                                    <input type="checkbox" id="check_1" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
                                     <label for="check_1">휴대폰 본인인증 이용 동의</label>
                                     <button type="button" onclick="Dialog.open('#termsTel')"><span class="offscreen">휴대폰 본인인증 이용 동의 이동</span></button>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="check_2" class="chk" >
+                                    <input type="checkbox" id="check_2" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
                                     <label for="check_2">전자금융거래 이용약관 동의</label>
                                     <button type="button" onclick="Dialog.open('#termsAgree1')"><span class="offscreen">전자금융거래 이용약관 동의 이동</span></button>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id="check_3" class="chk" >
+                                    <input type="checkbox" id="check_3" class="chk" name="chkAgreeGroup1" onchange="allCheck.isAll('chkAgreeGroup1', 'check_all');"> <!-- [20201109] 전체체크 함수 추가 -->
                                     <label for="check_3">전자금융 서비스 약관 동의</label>
                                     <button type="button" onclick="Dialog.open('#termsAgree2')"><span class="offscreen">전자금융 서비스 약관 동의 이동</span></button>
                                 </div>
