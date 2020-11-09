@@ -37,7 +37,7 @@ body.detail.ing-audio::after{z-index: 100; }
 
 .header-nav{position: relative; width:100%; margin:20px 0; overflow-x:auto; height: 33px;}
 .header-nav .bar{position: absolute; width:100px; height:3.2rem; display:block; top:0; left:0; background:rgba(255,255,255,0.4); border-radius:1.6rem; z-index: 0; transition:width .2s ease-out, left .2s ease-out}
-.header-nav ul{display:flex; position: relative; z-index:1; width:100%;}
+.header-nav ul{display:flex; position: relative; z-index:1; width:100%; flex-wrap:nowrap;}
 .header-nav li{margin:0 5px 0 20px; flex:0 0 auto; }
 .header-nav li + li{margin: 0 5px}
 .header-nav li:last-child{padding-right:20px}
