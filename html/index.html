@@ -887,7 +887,10 @@
                             callback: function(v){console.log(v)} 
                         });
 
-                        $(win).off('scroll.win').on('scroll.win', lineCheck); 
+                        $(win).off('scroll.win').on('scroll.win', function(){
+                            lineCheck();
+                            $('.slidepage .slidepage-item').css('min-height', $(win).outerHeight());
+                        }); 
                     }
 
                     $plugins.audio = {}
