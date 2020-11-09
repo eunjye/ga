@@ -493,6 +493,7 @@ h2.tit {font-size:16px; font-weight:700;}
 .article-sub-tit-poc,
 .article-sub-tit { margin:25px 0 10px 0; font-size:18px; font-weight:bold; line-height:24px }
 .article-sub-tit { font-size:16px; }
+.article-sub-tit:first-child { margin-top:0; }
 
 .dots-li > li { position:relative; padding-left:9px; margin-top:5px; }
 .dots-li > li:before { content: ''; position: absolute; top:10px; left:0; width: 3px;height: 3px; background-color: #535353; border-radius: 100% }
@@ -530,5 +531,11 @@ h2.tit {font-size:16px; font-weight:700;}
 .type_terms .tab_track { margin:0 -20px; }
 
 .bul-etc > li { position:relative; margin-top:5px; padding-left:18px; line-height:1.5; display:block; }
+.article + .bul-etc { margin-top:10px; }
 .bul-ico { position:relative; top:0; margin:0 0 0 -18px; width:18px; display:inline-block; font-style:normal; }
 
+/* table */
+.tbl-tit { display:block; margin:10px 0 5px; font-size:14px; font-weight:bold; }
+.tbl-base { margin:5px 0 10px; table-layout:fixed; border-top:2px solid #2D333E; border-bottom:1px solid #e3e4e5; }
+.tbl-base th { font-size:13px; font-weight:normal; color:#666; padding:5px; vertical-align:top;}
+.tbl-base td { font-size:14px; color:#111; padding:4px; vertical-align:top;}
