@@ -107,8 +107,8 @@ html[intro="true"] .btn-talk.off{z-index:101}
 
 /* main swiper */
 .ready .slidepage{position:fixed;}
-.base-main .slick-track { min-height:100vh; }
-.base-main .slidepage-item{padding-top:120px; min-height:100vh; height:100%; position: relative; overflow-x: hidden; overflow-y:hidden;}
+.slick-track { height:100%; }
+.base-main .slidepage-item{padding-top:120px; height:100%; position: relative; overflow-x: hidden; overflow-y:hidden;}
 .slidepage > .slick-list { height:100% !important; }
 .slidepage-item.type-a{background:url(../img/common/pagebg_a.jpg) repeat 50% 50% / 100% ;}
 .slidepage-item.type-b{background:url(../img/common/pagebg_b.jpg) repeat 50% 50% / 100% ;}
