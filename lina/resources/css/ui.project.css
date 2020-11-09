@@ -177,6 +177,7 @@ html[page="0"] .type-b .page-box button{min-height:46vmin}
 .page-img2{transform: translateZ(1px);}
 
 /*page1*/
+#boxbox { width:1vh; height:1vh; }
 .type-b .group-dl .type-sum,
 .type-b .group-dl dt{color:#222; font-size:5.5vmin; line-height:1.4; letter-spacing:-0.05em; margin-bottom:3vmin;}
 .type-b .page-tit h1{text-shadow:1px 1px 1px rgba(240,111,132,0.5);}

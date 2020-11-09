@@ -113,6 +113,7 @@
                         <section class="slidepage-item type-b" page="1">
                             <div class="slidepage-content-wrap">
                                 <div class="page-tit">
+                                    <p id="boxbox"></p>
 									<span>(무)THE든든한간병비치매보험(해지환급금미지급형)</span>
                                     <h1>보장금액 <br>한눈에 보기</h1>
                                 </div>
@@ -809,13 +810,13 @@
                         
                         //set
                         navBar(0);
-                        $('.type-b .page-tit span').text($(win).outerHeight());
+                                $('.type-b .page-tit span').text($(win).outerHeight()+', '+$('#boxbox').css('height'));
                         $slidepage.find('.slidepage-item').css('min-height', $(win).outerHeight());
                         var timer
                         $(win).on('resize', function(){
                             clearTimeout(timer);
                             timer = setTimeout(function(){
-                        $('.type-b .page-tit span').text($(win).outerHeight());
+                                $('.type-b .page-tit span').text($(win).outerHeight()+', '+$('#boxbox').css('height'));
                                 $slidepage.find('.base-wrap .slick-track').css('min-height', $(win).outerHeight());
                                 $slidepage.find('.slidepage-item').css('min-height', $(win).outerHeight());
                             }, 100);
