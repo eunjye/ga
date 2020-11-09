@@ -107,7 +107,7 @@ html[intro="true"] .btn-talk.off{z-index:101}
 
 /* main swiper */
 .ready .slidepage{position:fixed;}
-.base-main .slidepage-item{padding-top:120px; height:100%; position: relative; overflow-x: hidden; overflow-y:hidden;}
+.base-main .slidepage-item{padding-top:120px; height:100%; position: relative; overflow-x: hidden; overflow-y:hidden; -webkit-overflow-scrolling:auto;}
 .slidepage > .slick-list { height:100% !important; }
 .slidepage-item.type-a{background:url(../img/common/pagebg_a.jpg) repeat 50% 50% / 100% ;}
 .slidepage-item.type-b{background:url(../img/common/pagebg_b.jpg) repeat 50% 50% / 100% ;}
@@ -165,7 +165,7 @@ html[intro="true"] .btn-talk.off{z-index:101}
 .page-img2 img{height:100%; }
 
 .page-box{width:calc(100% - 30px); position: absolute; bottom:10px; left:15px; background:#fff; box-shadow:5px 5px 10px rgba(0,0,0,0.1); border-radius:20px; transition:bottom .2s ease-out, opacity .3s ease-in-out; transition-delay: 0.2s; z-index:5; overflow: hidden;}
-.page-box button {width:100%; height:100%; padding:10px 30px 40px; transition:padding .3s ease-out; padding:8vmin; background:red;}
+.page-box button {width:100%; height:100%; padding:10px 30px 40px; transition:padding .3s ease-out; padding:8vmin;}
 
 html[page="3"] .type-d .page-box button,
 html[page="2"] .type-a .page-box button,
