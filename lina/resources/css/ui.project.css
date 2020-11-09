@@ -108,7 +108,7 @@ html[intro="true"] .btn-talk.off{z-index:101}
 /* main swiper */
 .ready .slidepage{position:fixed;}
 .base-main .slidepage-item{padding-top:120px; height:100%; position: relative; overflow-x: hidden;}
-/* .slidepage > .slide-list { height:100% !important; } */
+.slidepage > .slick-list { height:100% !important; }
 .slidepage-item.type-a{background:url(../img/common/pagebg_a.jpg) repeat 50% 50% / 100% ;}
 .slidepage-item.type-b{background:url(../img/common/pagebg_b.jpg) repeat 50% 50% / 100% ;}
 .slidepage-item.type-c{background:url(../img/common/pagebg_c.jpg) repeat 50% 50% / 100% ;}
