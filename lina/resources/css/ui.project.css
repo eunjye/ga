@@ -185,7 +185,7 @@ html[page="0"] .type-b .page-box button{min-height:46vmin}
 .type-b .page-img{left:50%; max-width:340px; height:calc(100vh - 75vmin - 150px); max-height:240px; transform:translate(-40%, 50vh); z-index: 1;}
 .type-b .page-img2{height:50vh; transform:translate(18vh, 80vh);}
 html[page="0"] .type-b .page-tit{transform:translate(20px, 0); opacity:1; transition-delay:0.2s;}
-html[page="0"] .type-b .page-img{transform:translate(-50%, calc(100vh - 45vmin - 20px - 100%)); left:50%; opacity:1; transition-delay:0.5s; min-height:150px;}
+html[page="0"] .type-b .page-img{transform:translate(-50%, calc(75vh - 100%)); left:50%; opacity:1; transition-delay:0.5s; min-height:150px;}
 html[page="0"] .type-b .page-img2{transform:translate(18vh, 40vh); opacity:1;}
 html[page="0"] .type-b .page-box{bottom:30px}
 html[page="0"] .type-b .page-box button{padding:7vmin 16vmin 7vmin 7vmin;}
