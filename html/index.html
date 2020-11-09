@@ -794,6 +794,10 @@
                         var $slidepage = $('.slidepage');
                         var $body = $('body');
 
+                        $slidepage.on('init', function(slick){
+                            $slidepage.find('.slidepage-item').css('min-height', $(win).outerHeight());
+                        });
+
                         $slidepage.slick({
                             slidesToShow: 1,
                             slidesToScroll: 1,
@@ -809,7 +813,6 @@
                         
                         //set
                         navBar(0);
-                        $slidepage.find('.slidepage-item').css('min-height', $(doc).outerHeight());
                         var timer
                         $(win).on('resize', function(){
                             clearTimeout(timer);
