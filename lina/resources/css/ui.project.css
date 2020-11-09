@@ -37,7 +37,7 @@ body.detail.ing-audio::after{z-index: 100; }
 
 .header-nav{position: relative; width:100%; margin:20px 0; overflow-x:auto; height: 33px;}
 .header-nav .bar{position: absolute; width:100px; height:3.2rem; display:block; top:0; left:0; background:rgba(255,255,255,0.4); border-radius:1.6rem; z-index: 0; transition:width .2s ease-out, left .2s ease-out}
-.header-nav ul{display:flex; position: relative; z-index:1;}
+.header-nav ul{display:flex; position: relative; z-index:1; width:100%;}
 .header-nav li{margin:0 5px 0 20px; flex:0; }
 .header-nav li + li{margin: 0 5px}
 .header-nav li:last-child{padding-right:20px}
@@ -183,8 +183,8 @@ html[page="0"] .type-b .page-box button{min-height:46vmin}
 .type-b .page-img{left:50%; max-width:340px; height:calc(100vh - 75vmin - 150px); max-height:200px; transform:translate(-40%, 50vh); z-index: 1;}
 .type-b .page-img2{height:50vh; transform:translate(18vh, 80vh);}
 html[page="0"] .type-b .page-tit{transform:translate(20px, 0); opacity:1; transition-delay:0.2s;}
-html[page="0"] .type-b .page-img{transform:translate(-40%, calc(100vh - 45vmin - 30px - 100%)); left:50%; opacity:1; transition-delay:0.5s;}
-html[page="0"] .type-b .page-img2{transform:translate(18vh, 40vh); opacity:1; }
+html[page="0"] .type-b .page-img{transform:translate(-40%, calc(100vh - 45vmin - 30px - 100%)); left:50%; opacity:1; transition-delay:0.5s; min-height:150px;}
+html[page="0"] .type-b .page-img2{transform:translate(18vh, 40vh); opacity:1;}
 html[page="0"] .type-b .page-box{bottom:30px}
 html[page="0"] .type-b .page-box button{padding:7vmin 16vmin 7vmin 7vmin;}
 html[page="0"] .ready .page-content.type-b{display:block; opacity:0; padding-top:180px; transition:transform .4s ease-out, opacity .4s ease-out; }
