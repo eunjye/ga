@@ -48,6 +48,7 @@
                         <div class="vod-wrap">
                             <button type="button" class="btn-close ui-vod-close" aria-label="영상 닫기"></button>
                             <div class="youtube_cont">
+                            <!-- [20201109] 자동전체화면전환 방지 : src url 끝에 ?playsinline=1 추가 -->
 							<iframe id="youtube_player" width="100%" height="100%" src="https://www.youtube.com/embed/dc5oKv1q57g?playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <!-- <video playsinline controls poster="../lina/resources/data/vod.jpg" id="adVod">
                                 <source src="../lina/resources/data/vod.mp4" type="video/mp4"> -->
@@ -808,13 +809,13 @@
                         
                         //set
                         navBar(0);
-                        $slidepage.find('.slidepage-item').css('min-height', $(win).outerHeight());
+                        $slidepage.find('.slidepage-item').css('min-height', $(doc).outerHeight());
                         var timer
                         $(win).on('resize', function(){
                             clearTimeout(timer);
                             timer = setTimeout(function(){
-                                $slidepage.find('.base-wrap .slick-track').css('min-height', $(win).outerHeight());
-                                $slidepage.find('.slidepage-item').css('min-height', $(win).outerHeight());
+                                $slidepage.find('.base-wrap .slick-track').css('min-height', $(doc).outerHeight());
+                                $slidepage.find('.slidepage-item').css('min-height', $(doc).outerHeight());
                             }, 100);
                            
                         });
