@@ -27,6 +27,37 @@
     </head>
     <body >
         <div class="base-wrap" >
+            <!-- S : intro-wrap -->
+            <div class="intro-wrap">
+                <div class="intro-header">
+                <div class="logo">
+                    <img src="../lina/resources/img/common/img_logo.png" alt="라이나생명" />
+                </div>
+                </div>
+                <div class="intro-cont">
+                <div class="txt-wrap">
+                    <div class="txt-top">
+                    <div class="txt"><span>박</span><span>라</span><span>이</span><span>님</span><span>,</span></div>
+                    <div class="txt bottom"><span>반</span><span>갑</span><span>습</span><span>니</span><span>다</span><span>.</span></div>
+                    </div>
+                    <div class="txt-middle">
+                    <div>친구처럼 믿음직하게,</div>
+                    <div>연인처럼 살갑게,</div>
+                    <div>가족처럼 진심을 다해</div>
+                    <div>잡은 두 손 놓지 않겠습니다.</div>
+                    <div>당신이 행복해질 때까지</div>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button class="btn" type="button" onclick="introHide()">시작하기</button>
+                </div>
+                <div class="start-txt">
+                    <p class="countdown"></p>
+                </div>
+                </div>
+            </div>
+            <!-- // E : intro-wrap -->
+
             <button type="button" class="btn-talk" aria-label="페이지 설명"></button>
 
             <section class="page-intro">
@@ -701,11 +732,41 @@
         <script src="../lina/resources/js/lib/slick.min.js"></script>
         <script src="../lina/resources/js/ui.global.js"></script>
         <script>
+            
+            //카운트 시작 숫자
+            var count = 9;
+            //카운트다운함수
+            var countdown = setInterval(function(){
+            //해당 태그에 아래 내용을 출력
+            $("p.countdown").html("<span>"
+                        + count + "</span><span>초 후 자동으로 연결됩니다.</span></p>");
+                //0초면 초기화 후 이동되는 사이트
+                if (count == 0) {
+                    introHide();
+                }
+                count--;//카운트 감소
+            }, 1000);
+
+            function introHide(){
+                clearInterval(countdown);
+                $('.intro-wrap').animate({
+                    opacity:0
+                }, 500, function(){
+                    $('.intro-wrap').hide();
+                });
+            }
+            
             ;(function($, win, doc, undefined) {
 
                 'use strict';
 
                 $(document).ready(function(){
+                    
+                    vodOpen();
+
+
+
+
                     var videoElem = document.getElementById('adVod');
 
                     $('.ui-page').on('click', function(){
@@ -737,28 +798,33 @@
                     
                     var embed01 = $('#youtube_player');
 
-                    $('.ui-vod').on('click', function(){
-                        
-                        $('.vod-wrap').slideDown(200);
+                    $('.ui-vod').on('click', vodOpen);
+
+                    function vodOpen(){
+                        if ($('.vod-wrap').hasClass('open')) {
+                            return false;
+                        }
+                        $('.vod-wrap').addClass('open').slideDown(200);
                         $('.slogan').stop().animate({
                             marginBottom: '5vh'
                         },200, function(){
                             $plugins.audio.stop();
-                            
-                            if (videoElem.paused) {
-                                videoElem.play();
-                            } else {
-                                videoElem.pause(); 
+                            if (videoElem !== undefined) {
+                                if (videoElem.paused) {
+                                    videoElem.play();
+                                } else {
+                                    videoElem.pause(); 
+                                }
                             }
                         });
                         $('.intro-btn > img').stop().animate({
                             top: '0'
                         },200);
                         $('.youtube_cont').append(embed01);
-                    });
+                    }
 
                     $('.ui-vod-close').on('click', function(){
-                        $('.vod-wrap').slideUp(200);
+                        $('.vod-wrap').removeClass('open').slideUp(200);
                         $('.slogan').stop().animate({
                             marginBottom: '28vh'
                         },200, function(){
