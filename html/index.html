@@ -50,7 +50,7 @@
                 </div>
                 <div class="start-txt">
                     <p class="countdown">
-                        <span id="seconds"></span><span>초 후 자동으로 연결됩니다.</span>
+                        <span id="seconds">5</span><span>초 후 자동으로 연결됩니다.</span>
                     </p>
                 </div>
                 </div>
@@ -753,24 +753,26 @@
                     });
                 });
 
-                setTimeout(function(){
-                    var count = 5;
-                    var countdown = setInterval(function(){
-                        $('#seconds').text(count);
-                        if (count === 0) {
-                            introHide();
-                        } else count--;
-                    }, 1000);
+                setTimeout(introCount, 1000*seconds*2+1000);
+            }
 
-                    function introHide(){
-                        clearInterval(countdown);
-                        $('.intro-wrap').animate({
-                            opacity:0
-                        }, 500, function(){
-                            $('.intro-wrap').hide();
-                        });
-                    }
-                }, 1000*seconds*2+1000);
+            var count = 5
+                , countdown;
+            function introCount() { 
+                countdown = setInterval(function(){
+                    $('#seconds').text(count);
+                    if (count === 0) {
+                        introHide();
+                    } else count--;
+                }, 1000);
+            }
+            function introHide(){
+                clearInterval(countdown);
+                $('.intro-wrap').animate({
+                    opacity:0
+                }, 500, function(){
+                    $('.intro-wrap').hide();
+                });
             }
             
             ;(function($, win, doc, undefined) {
