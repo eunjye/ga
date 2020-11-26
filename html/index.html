@@ -36,10 +36,7 @@
                 </div>
                 <div class="intro-cont">
                 <div class="txt-wrap">
-                    <div class="txt-top">
-                    <div class="txt"><span>박</span><span>라</span><span>이</span><span>님</span><span>,</span></div>
-                    <div class="txt bottom"><span>반</span><span>갑</span><span>습</span><span>니</span><span>다</span><span>.</span></div>
-                    </div>
+                    <div class="txt-top"></div>
                     <div class="txt-middle">
                     <div>친구처럼 믿음직하게,</div>
                     <div>연인처럼 살갑게,</div>
@@ -49,10 +46,12 @@
                     </div>
                 </div>
                 <div class="btn-wrap">
-                    <button class="btn" type="button" onclick="introHide()">시작하기</button>
+                    <button class="btn" type="button" onclick="introHide()">내 보험을 영상과 이미지로 쉽게 보기</button>
                 </div>
                 <div class="start-txt">
-                    <p class="countdown"></p>
+                    <p class="countdown">
+                        <span id="seconds"></span><span>초 후 자동으로 연결됩니다.</span>
+                    </p>
                 </div>
                 </div>
             </div>
@@ -732,28 +731,46 @@
         <script src="../lina/resources/js/lib/slick.min.js"></script>
         <script src="../lina/resources/js/ui.global.js"></script>
         <script>
-            
-            //카운트 시작 숫자
-            var count = 9;
-            //카운트다운함수
-            var countdown = setInterval(function(){
-            //해당 태그에 아래 내용을 출력
-            $("p.countdown").html("<span>"
-                        + count + "</span><span>초 후 자동으로 연결됩니다.</span></p>");
-                //0초면 초기화 후 이동되는 사이트
-                if (count == 0) {
-                    introHide();
-                }
-                count--;//카운트 감소
-            }, 1000);
+            setIntroText();
+            function setIntroText() {
+                var userName = '박라이', // [To.개발] 고객명 넣어주세요.
+                    seconds = 1.5; // standard seconds
 
-            function introHide(){
-                clearInterval(countdown);
-                $('.intro-wrap').animate({
-                    opacity:0
-                }, 500, function(){
-                    $('.intro-wrap').hide();
+                // set init
+                $('.intro-cont .txt-top').html('<span>'+userName+'님,</span><span>반갑습니다.</span>');
+                $('.intro-cont .txt-top span').each(function(idx, item){
+                    var _html = ''
+                        , txtLeng = $(item).text().length;
+
+                    for (var i = 0; i < txtLeng; i++) {
+                        _html += '<i>' + $(item).text()[i] + '</i>';
+                    }
+                    $(item).html(_html);
+
+                    // x seconds per 1 sentence
+                    $(item).find('i').each(function(_idx, _item){
+                        $(_item).css('animation-delay', seconds*(idx + _idx/txtLeng).toFixed(1)+'s');
+                    });
                 });
+
+                setTimeout(function(){
+                    var count = 5;
+                    var countdown = setInterval(function(){
+                        $('#seconds').text(count);
+                        if (count === 0) {
+                            introHide();
+                        } else count--;
+                    }, 1000);
+
+                    function introHide(){
+                        clearInterval(countdown);
+                        $('.intro-wrap').animate({
+                            opacity:0
+                        }, 500, function(){
+                            $('.intro-wrap').hide();
+                        });
+                    }
+                }, 1000*seconds*2+1000);
             }
             
             ;(function($, win, doc, undefined) {

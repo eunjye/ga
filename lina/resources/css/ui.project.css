@@ -471,11 +471,17 @@ html[page="4"] .detail .base-wrap::after{content:""; display:block; width:100%; 
  .intro-header {position:relative;}
  .intro-header .logo {position:absolute; top:20px; right:20px; z-index:10;}
  .intro-header .logo img {width:94px; height:24px;}
- .intro-cont {position:absolute; top:0; left:0; width:100%; height:100%;  background:url(../img/common/bg_main.jpg) no-repeat center center #fff; background-size:cover;}
- .intro-cont:before {content:''; position:absolute; bottom:0; right:0; width:100%; height:100%; background:url(../img/common/img_actor_song.png) no-repeat right bottom; background-size:250px auto;}
- .txt-wrap {position:absolute; top:70px; left:25px;}
+ .intro-cont {position:absolute; top:0; left:0; width:100%; height:100%;  background:url(../img/common/intro_bg.jpg) no-repeat center center #fff; background-size:cover;}
+ .intro-cont:before {content:''; display:block; position:absolute; bottom:0; right:0; width:100%; height:100%; background:url(../img/common/intro_visual.png) right bottom 17%/76% auto no-repeat; animation:aniShowBottom ease-in-out 1s both;}
+ @keyframes aniShowBottom {
+   0% { bottom:-10px; opacity:0; }
+   100% { bottom:0; opacity:1; }
+ }
+ .intro-cont:after { content:""; position:absolute; bottom:0; left:0; width:100%; height:19vmax; display:block; background:linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); }
+ .txt-wrap {position:absolute; top:70px; left:44px;}
  .txt-wrap .txt-top {font-weight:700; font-size:30px; line-height:40px; letter-spacing:-1.5px;}
- .txt-wrap .txt-top .txt span {display:inline-block; font-weight:900; 
+ .txt-wrap .txt-top span { display:block; }
+ .txt-wrap .txt-top span i {display:inline-block; font-weight:900; 
   -webkit-animation: m1contTXT 1.0s forwards ease-in-out;
   -moz-animation: m1contTXT 1.0s forwards ease-in-out;
   -ms-animation: m1contTXT 1.0s forwards ease-in-out;
@@ -497,7 +503,7 @@ html[page="4"] .detail .base-wrap::after{content:""; display:block; width:100%; 
     0% {transform:translateX(15px);}
     100% {transform:translateX(0);opacity:1;}
   }
-  .txt-wrap .txt-top .txt span:nth-child(1) {animation-delay: 0.2s;}
+  /* .txt-wrap .txt-top .txt span:nth-child(1) {animation-delay: 0.2s;}
 	.txt-wrap .txt-top .txt span:nth-child(2) {animation-delay: 0.5s;}
 	.txt-wrap .txt-top .txt span:nth-child(3) {animation-delay: 0.7s;}
   .txt-wrap .txt-top .txt span:nth-child(4) {animation-delay: 0.9s;}
@@ -507,7 +513,7 @@ html[page="4"] .detail .base-wrap::after{content:""; display:block; width:100%; 
   .txt-wrap .txt-top .txt.bottom span:nth-child(3) {animation-delay: 1.7s;}
   .txt-wrap .txt-top .txt.bottom span:nth-child(4) {animation-delay: 1.9s;}
   .txt-wrap .txt-top .txt.bottom span:nth-child(5) {animation-delay: 2.1s;}
-  .txt-wrap .txt-top .txt.bottom span:nth-child(6) {animation-delay: 2.3s;}
+  .txt-wrap .txt-top .txt.bottom span:nth-child(6) {animation-delay: 2.3s;} */
  .txt-wrap .txt-middle {margin-top:15px;  letter-spacing:-1.2px;}
  .txt-wrap .txt-middle div {font-size:18px; line-height:23px;
   -webkit-animation: m1contTXT2 2.0s forwards ease-in-out;
@@ -538,8 +544,8 @@ html[page="4"] .detail .base-wrap::after{content:""; display:block; width:100%; 
 .txt-wrap .txt-middle div:nth-child(3) {animation-delay:3.2s;}
 .txt-wrap .txt-middle div:nth-child(4) {animation-delay:3.4s;}
 .txt-wrap .txt-middle div:nth-child(5) {animation-delay:3.6s;}
-.btn-wrap {position:absolute; bottom:65px; left:0; width:100%; padding:0 25px;}
-.btn-wrap button {display:block; width:100%; height:45px; border-radius:5px; background-color:#018bed; line-height:44px; color:#fff; font-size:20px; font-weight:500;
+.btn-wrap {z-index:1; position:absolute; bottom:65px; left:0; width:100%; padding:0 25px;}
+.btn-wrap button {display:block; width:100%; height:45px; border-radius:5px; background-color:#018bed; line-height:44px; color:#fff; font-size:20px; font-weight:500; letter-spacing:-0.07em;
   -webkit-animation: startBtn 1.0s forwards ease-in-out;
   -moz-animation: startBtn 1.0s forwards ease-in-out;
   -ms-animation: startBtn 1.0s forwards ease-in-out;
@@ -563,7 +569,7 @@ html[page="4"] .detail .base-wrap::after{content:""; display:block; width:100%; 
   100% {transform:translateY(0);opacity:1;}
 }
 
-.start-txt {position:fixed; bottom:30px; left:50%;  
+.start-txt {z-index:1; position:fixed; bottom:30px; left:50%;  
   -webkit-animation: alarmTxt 1.0s forwards ease-in-out;
   -moz-animation: alarmTxt 1.0s forwards ease-in-out;
   -ms-animation: alarmTxt 1.0s forwards ease-in-out;
@@ -599,4 +605,11 @@ html[page="4"] .detail .base-wrap::after{content:""; display:block; width:100%; 
 @media screen and (orientation: landscape) {
 	body{overflow: hidden; height:100%}
 	body::after{content:"가로모드를 지원하지 않습니다.";display:block; position:fixed; top:0; left:0; width:100%; height:100%; z-index:2000;  background:rgba(0,0,0,0.7); text-align: center; color:#fff; font-size:30px;line-height: 100vh;}
+}
+
+@media screen and (max-width:375px) {
+  .txt-wrap { left:30px }
+}
+@media screen and (max-width:360px) {
+  .btn-wrap button { font-size:16px; }
 }
