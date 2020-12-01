@@ -27,6 +27,7 @@
     </head>
     <body >
         <div class="base-wrap" >
+            <!-- [20201126] 인트로 화면 추가 -->
             <!-- S : intro-wrap -->
             <div class="intro-wrap">
                 <div class="intro-header">
@@ -731,6 +732,7 @@
         <script src="../lina/resources/js/lib/slick.min.js"></script>
         <script src="../lina/resources/js/ui.global.js"></script>
         <script>
+            // [20201126] setIntroText() 함수 추가 및 실행
             setIntroText();
             function setIntroText() {
                 var userName = '박라이', // [To.개발] 고객명 넣어주세요.
@@ -774,13 +776,13 @@
                     $('.intro-wrap').hide();
                 });
             }
-            
+
             ;(function($, win, doc, undefined) {
 
                 'use strict';
 
                 $(document).ready(function(){
-                    
+                    // [20201126] vodOpen 함수 실행
                     vodOpen();
 
 
@@ -817,6 +819,7 @@
                     
                     var embed01 = $('#youtube_player');
 
+                    // [20201126] .ui-vod 클릭 이벤트 동작 방식 변결 및 vodOpen() 함수 추가
                     $('.ui-vod').on('click', vodOpen);
 
                     function vodOpen(){
@@ -843,7 +846,7 @@
                     }
 
                     $('.ui-vod-close').on('click', function(){
-                        $('.vod-wrap').removeClass('open').slideUp(200);
+                        $('.vod-wrap').removeClass('open').slideUp(200); // [20201126] 동작 수정
                         $('.slogan').stop().animate({
                             marginBottom: '28vh'
                         },200, function(){
